@@ -3,7 +3,7 @@ import Button from './Button'
 import FriendProfile from './FriendProfile'
 
 
-const Friend = (props) => {
+const Friend = () => {
   const[friend,setFriend] =useState({})
 
   const getFriend = () => {
