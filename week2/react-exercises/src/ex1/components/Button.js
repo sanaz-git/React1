@@ -1,13 +1,10 @@
 import React from "react";
 
-const  Button = () => {
-
+const  Button = ({getFriend}) => {
 
   return (
     <div>
-      <button className= "btn" onClick={getFriend}>
-      Get a friend!
-      </button>
+      <button className= "btn" onClick={getFriend}> Get a friend!</button>
     </div>
   )
 

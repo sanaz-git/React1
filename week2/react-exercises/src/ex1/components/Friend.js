@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
+import Button from './Button'
+import FriendProfile from './FriendProfile'
 
-const friendApp = () => {
+
+const Friend = (props) => {
   const[friend,setFriend] =useState({})
 
-  const getFriend = async() => {
-    const response = await fetch('https://www.randomuser.me/api?results=1')
-    const responseData = await response.json()
-    setFriend(responseData)
+  const getFriend = () => {
+    fetch('https://www.randomuser.me/api?results=1')
+    .then (responseData => responseData.json())
+    .then (data =>{setFriend(data.results[0])})
+    .catch(err => {console.log(err)})
+
   }
-  getFriend()
  
   return(
     <div className='friend'>
-       
+      <Button getFriend={getFriend} />
+      <FriendProfile friend={friend} />
     </div>
   )
  
 }
 
 
-export default friendApp
+export default Friend
