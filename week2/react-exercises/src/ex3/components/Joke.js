@@ -1,14 +1,13 @@
 import React from "react";
 import RandomJoke from "./RandomJoke";
 
-const Joke = ({randomJoke}) => {
+const Joke = ({joke}) => {
 
   return(
     <div>
-      <RandomJoke />
+    {joke}
     </div>
   )
-
 }
 
 export default Joke

@@ -29,13 +29,4 @@ const RandomJoke = () => {
  
 }
 
-
-
-
-
-
-
-
-
-
 export default RandomJoke
