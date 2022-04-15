@@ -1,4 +1,5 @@
 import React from "react"
+
  const DogPhoto = ({dogPhoto}) => {
    return(
      <div>

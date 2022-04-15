@@ -9,15 +9,15 @@ const DogGallery = () => {
   const getDogPhotos = () => {
     fetch('https://dog.ceo/api/breeds/image/random')
     .then (responseData => responseData.json())
-    .then (data =>{setDogPhotos(data.results[0])})
+    .then (data =>{setDogPhotos(data.message)})
     .catch(err => {console.log(err)})
 
   }
  
   return(
-    <div className='friend'>
+    <div>
       <Button getDogPhoto={getDogPhotos} />
-       {dogPhotos.map(dogPhoto => {dogPhoto})} 
+       <DogPhoto dogPhoto={dogPhotos.map(dogPhoto => {dogPhoto})}  />
     </div>
   )
  

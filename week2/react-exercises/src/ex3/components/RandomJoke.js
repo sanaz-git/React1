@@ -4,7 +4,7 @@ import Joke from './Joke';
 
 const RandomJoke = () => {
 
-  [joke,setJoke]=useState({})
+  const[joke,setJoke]=useState({})
 
   const fetchData = () =>{
     fetch('https://official-joke-api.appspot.com/random_joke')
