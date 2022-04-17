@@ -1,10 +1,10 @@
 import React from "react";
 
 //dogPhoto
-const DogPhoto = ({ dogPhotos }) => {
+const DogPhoto = ({ dogPhoto }) => {
   return (
     <>
-      <img src={dogPhotos} alt="dog" />
+      <img src={dogPhoto} alt="dog" />
     </>
   );
 };

@@ -6,10 +6,12 @@ import Ex3 from './Ex3/Ex3'
 function App() {
   return (
     <div className="App">
-      <Ex1 />     
+      <hr />
+      <Ex1 />
+      <hr />
       <Ex2 />
+      <hr />
       <Ex3 /> 
-
     </div>
   );
 }

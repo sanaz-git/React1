@@ -3,7 +3,7 @@ import Button from "./Button";
 import FriendProfile from "./FriendProfile";
 
 const Friend = () => {
-  const [friend, setFriend] = useState({});
+  const [friend, setFriend] = useState();
 
   const getFriend = () => {
     fetch("https://www.randomuser.me/api?results=1")
@@ -15,11 +15,11 @@ const Friend = () => {
         console.log(err);
       });
   };
-
+  console.log(friend)
   return (
     <div className="Friend">
       <Button getFriend={getFriend} />
-      <FriendProfile friend={friend} />
+      {friend && <FriendProfile friend={friend} /> }
     </div>
   );
 };

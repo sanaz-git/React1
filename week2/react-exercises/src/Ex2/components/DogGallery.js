@@ -9,21 +9,23 @@ const DogGallery = () => {
     fetch("https://dog.ceo/api/breeds/image/random")
       .then((responseData) => responseData.json())
       .then((data) => {
-        setDogPhotos(data.message);
+        // let test = dogPhotos
+        // dogPhotos.push(data.message)
+        // console.log(test)
+        setDogPhotos([...dogPhotos, data.message]);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
+  console.log(dogPhotos)
   return (
     <div>
       <Button getDogPhoto={getDogPhoto} />
-      {/* <DogPhoto dogPhotos={dogPhotos} />
-      {dogPhotos.map((dogPhoto, index) => 
+      
+      {dogPhotos && dogPhotos.map((dogPhoto, index) => 
         <DogPhoto key={index} dogPhoto={dogPhoto} />
-      )} */}
-      <DogPhoto dogPhotos={dogPhotos} />
+      )}
     </div>
   );
 };

@@ -5,7 +5,7 @@ const RandomJoke = () => {
   const [joke, setJoke] = useState({});
 
   const fetchData = () => {
-    fetch("https://official-joke-api.appspot.com/random_joke")
+    fetch("https://api.chucknorris.io/jokes/random")
       .then((response) => {
         return response.json();
       })
