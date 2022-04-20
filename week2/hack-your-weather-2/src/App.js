@@ -2,11 +2,17 @@ import './App.css';
 import City from './components/City';
 
 
-export default function App() {
+
+const App = () => {
+ 
   return (
     <div className="App">
       Weather
-      <City/>
+      <City />
     </div>
   );
 }
+
+
+
+export default App
