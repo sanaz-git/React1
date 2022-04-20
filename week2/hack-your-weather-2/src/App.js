@@ -1,19 +1,12 @@
 import './App.css';
-import Search from "./components/Search";
+import City from './components/City';
 
 
 export default function App() {
   return (
     <div className="App">
       Weather
-      <div>
-        <form>
-          <label>
-            <input type="text" value={null} onChange={Search} />
-          </label>
-          <input type="submit" value="Search" />
-        </form>
-      </div>
+      <City/>
     </div>
   );
 }

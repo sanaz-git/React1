@@ -1,11 +1,9 @@
 import React from "react";
 
-const Search = ({ FetchData }) => {
+const Search = ({ city }) => {
   return (
     <div>
-      <div>
-        <button className="btn" onClick={FetchData}></button>
-      </div>
+      {city}
     </div>
   );
 };
