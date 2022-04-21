@@ -1,25 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Weather from './Weather';
 
 const City = () => {
   const [city, setCity] = useState('');
   const [allInfo, setAllInfo] = useState();
-
-  console.log(allInfo);
+  const [error, setError] = useState(null);
+  const [isPending, setIsPending] = useState(true);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    setError(false);
+
     const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
 
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw Error('city not founded');
+        } else {
+          setIsPending(true);
+          setError(true);
+        }
+        return response.json();
+      })
       .then((data) => {
         setAllInfo(data);
+        setIsPending(false);
+        setError(null);
       })
-
       .catch((err) => {
-        console.log(err);
+        setIsPending(false);
+        setError(err.message);
       });
   };
 
@@ -37,6 +49,8 @@ const City = () => {
           search
         </button>
       </form>
+      {error && <div>{error}</div>}
+      {isPending && <div>Loading...</div>}
       {allInfo && <Weather allInfo={allInfo} />}
     </div>
   );
