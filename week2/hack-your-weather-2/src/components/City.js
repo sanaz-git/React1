@@ -15,11 +15,9 @@ const City = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        if (data.message == city.name) {
-          return setAllInfo(data);
-        } else {
-        }
+        setAllInfo(data);
       })
+
       .catch((err) => {
         console.log(err);
       });
@@ -27,16 +25,19 @@ const City = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="form">
         <input
+          className="input"
+          placeholder="&#xF002; Search City"
           type="text"
-          placeholder="Choose a City"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button type="submit"> search</button>
+        <button className="btn" type="submit">
+          search
+        </button>
       </form>
-      {/* <Weather allInfo={allInfo}/>    */}
+      {allInfo && <Weather allInfo={allInfo} />}
     </div>
   );
 };
