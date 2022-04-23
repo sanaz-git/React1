@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Weather from './Weather';
 
 const City = () => {
@@ -20,7 +20,7 @@ const City = () => {
           throw Error('city not founded');
         } else {
           setIsPending(true);
-          setError(true);
+          setError(null);
         }
         return response.json();
       })
@@ -32,6 +32,7 @@ const City = () => {
       .catch((err) => {
         setIsPending(false);
         setError(err.message);
+        setAllInfo(null);
       });
   };
 
