@@ -5,7 +5,7 @@ const City = () => {
   const [city, setCity] = useState('');
   const [allInfo, setAllInfo] = useState();
   const [error, setError] = useState(null);
-  const [isPending, setIsPending] = useState(true);
+  const [isPending, setIsPending] = useState(false);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -14,12 +14,13 @@ const City = () => {
     const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
 
+    setIsPending(true);
+
     fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw Error('city not founded');
         } else {
-          setIsPending(true);
           setError(null);
         }
         return response.json();
