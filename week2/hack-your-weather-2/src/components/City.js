@@ -20,8 +20,6 @@ const City = () => {
       .then((response) => {
         if (!response.ok) {
           throw Error('city not founded');
-        } else {
-          setError(null);
         }
         return response.json();
       })
