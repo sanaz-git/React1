@@ -1,38 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+  margin: auto;
   text-align: center;
+  width: 90%;
+  background: rgb(245, 245, 247);
+  background: linear-gradient(
+    90deg,
+    rgba(245, 245, 247, 1) 0%,
+    rgba(193, 182, 172, 1) 35%,
+    rgba(167, 179, 203, 1) 100%
+  );
+  font-family: zen loop, cursive;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.friend {
+  display: inline-block;
+  text-align: left;
+  padding: 20px;
+  background-color: #fdab72;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.friend li {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  line-height: 25px;
+}
+
+.btn {
+  background-color: #fdab72;
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fdab72;
+  color: black;
+  font-family: zen loop, cursive;
+}
+
+.dogImg {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  display: block;
+  width: 220px;
+  height: 220px;
+  margin: 10px 5px 5px 10px;
+  border-radius: 20px;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.joke {
+  padding: 20px;
+  background-color: #fdab72;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
 }

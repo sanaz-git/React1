@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import Joke from "./Joke";
+import React, { useState, useEffect } from 'react';
+import Joke from './Joke';
 
 const RandomJoke = () => {
   const [joke, setJoke] = useState({});
 
   const fetchData = () => {
-    fetch("https://api.chucknorris.io/jokes/random")
+    fetch('https://api.chucknorris.io/jokes/random')
       .then((response) => {
         return response.json();
       })
@@ -19,7 +19,7 @@ const RandomJoke = () => {
   }, []);
 
   return (
-    <div>
+    <div className="joke">
       <Joke joke={joke} />
     </div>
   );

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Button from "./Button";
-import DogPhoto from "./DogPhoto";
+import React, { useState } from 'react';
+import Button from './Button';
+import DogPhoto from './DogPhoto';
 
 const DogGallery = () => {
   const [dogPhotos, setDogPhotos] = useState([]);
 
   const getDogPhoto = () => {
-    fetch("https://dog.ceo/api/breeds/image/random")
+    fetch('https://dog.ceo/api/breeds/image/random')
       .then((responseData) => responseData.json())
       .then((data) => {
         // let test = dogPhotos
@@ -18,14 +18,16 @@ const DogGallery = () => {
         console.log(err);
       });
   };
-  console.log(dogPhotos)
+  console.log(dogPhotos);
   return (
     <div>
       <Button getDogPhoto={getDogPhoto} />
-      
-      {dogPhotos && dogPhotos.map((dogPhoto, index) => 
-        <DogPhoto key={index} dogPhoto={dogPhoto} />
-      )}
+      <div className="dogImg">
+        {dogPhotos &&
+          dogPhotos.map((dogPhoto, index) => (
+            <DogPhoto key={index} dogPhoto={dogPhoto} />
+          ))}
+      </div>
     </div>
   );
 };

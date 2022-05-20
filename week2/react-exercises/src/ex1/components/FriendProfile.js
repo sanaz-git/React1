@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const FriendProfile = ({ friend }) => {
-  console.log(friend)
+  console.log(friend);
   return (
-    <ul>
+    <ul className="friend">
       <li>First Name: {friend.name.first}</li>
       <li>Last Name: {friend.name.last}</li>
       <li>
